@@ -1,12 +1,33 @@
+package Q2;
+
+import java.util.ArrayList;
+
 public class Main {
-    public static void main(String[] args)
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        System.out.println(max(list));
+        list.add(0);
+        list.add(10);
+        list.add(15);
+        list.add(20);
+        list.add(10);
+        list.add(30);
+        System.out.println(max(list));
+    }
+
+    public static Integer max(ArrayList<Integer> list)
     {
-        Account acc = new Account(1122,20000);
-        acc.setAnnualIR(4.5);
-        acc.withdraw(2500);
-        acc.deposit(3000);
-        System.out.println(acc.getBalance());
-        System.out.println(acc.getMonthlyInterest());
-        System.out.println(acc.getDateCreated());
+        int max=0;
+        if(list==null||list.size()==0)
+            return null;
+        else
+        {
+            for(int i=0;i<list.size();i++)
+            {
+                if(list.get(i)>=max)
+                    max= list.get(i);
+            }
+            return max;
+        }
     }
 }
